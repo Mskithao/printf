@@ -20,7 +20,6 @@ while (*format)
 if (*format != '%')
 {
 _putchar(*format);
-format++;
 number++;
 }
 else
@@ -30,12 +29,11 @@ if (*format == 'c')
 {
 char c = va_arg(args, int);
 _putchar(c);
-format++;
 number++;
 }
 else if (*format == 's')
 {
-const char *str = va_arg(args, const char*);
+const char str = va_arg(args, const char);
 while (*str != '\0')
 {
 putchar(*str);
@@ -46,7 +44,6 @@ number++;
 else if (*format == '%')
 {
 _putchar('%');
-format++;
 number++;
 }
 else
